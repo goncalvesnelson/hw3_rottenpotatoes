@@ -23,7 +23,13 @@ Background: movies have been added to database
 
 Scenario: sort movies alphabetically
   # your steps here
-
+  Given I check the following ratings: G, R
+  And I press "ratings_submit"
+  And I follow "title_header"
+  Then I should see "Aladdin" before "Amelie"
 Scenario: sort movies in increasing order of release date
-  # your steps here
+  Given I check the following ratings: G, R
+  And I press "ratings_submit"
+  And I follow "release_date_header"
+  Then I should see "Aladdin" before "Amelie"
 
