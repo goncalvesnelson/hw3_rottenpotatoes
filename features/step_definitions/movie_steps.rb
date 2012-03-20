@@ -22,8 +22,8 @@ Then /^I should see all the movies/ do ||
 end
 
 Then /^I should see no movies/ do ||
-  db_rows = Movie.count
-  rows = find("table#movies tbody").all('tr').size
+
+  rows = all("table#movies tbody tr").size
   assert 0 == rows, "Wrong number of rows"
 end
 
@@ -34,7 +34,7 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.content  is the entire content of the page as a string.
   body = page.body
-  assert body =~ /.*(#{e1}).*(#{e2})/im, "Order is not correct"
+  assert body =~ /.*#{e1}.*#{e2}/m, "Order is not correct"
 end
 
 # Make it easier to express checking or unchecking several boxes at once
