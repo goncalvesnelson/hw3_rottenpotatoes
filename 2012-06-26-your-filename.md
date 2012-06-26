@@ -1,3 +1,3 @@
 # How does it work?
 
-Teste
+Enter Text in Markdown format.
